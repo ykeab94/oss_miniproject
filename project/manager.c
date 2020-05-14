@@ -7,12 +7,12 @@
 
 int readScore(Student s, int isResult) {
     int sum = 0;
-    char grade='?';
+    char grade;
     if(isResult == 0) 
 	printf("%10s %7d %7d %7d %7d", s.name, s.mid, s.lab, s.project, s.finals);
     else if(isResult == 1) {
 	sum = s.mid+s.lab+s.project+s.finals;
-	grade = gradeScore(sum,grade);
+	grade = gradeScore(sum);
 	printf("%10s %7d %7d %7d %7d %7d %7c", s.name, s.mid, s.lab, s.project, s.finals, sum, grade);
     }
     printf("\n");
@@ -20,7 +20,8 @@ int readScore(Student s, int isResult) {
 }
 
 //학생성적의 등급을 매기는 함수
-char gradeScore(int sum,char grade){
+char gradeScore(int sum){
+	char grade;
      if (90 <= sum && sum <= 100) grade='A';
      else if (80 <= sum && sum < 90) grade='B';
      else if (70 <= sum && sum < 80) grade='C';

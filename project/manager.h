@@ -34,5 +34,6 @@ int selectDataNo(Student *s, int count);
 void printStd();
 
 //학생성적의 등급을 매기는 함수
-char gradeScore(int sum,char grade);
+char gradeScore(int sum);
+
 
